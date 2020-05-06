@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/public/main.css">
 
     <title>
         <%= title %>
@@ -12,19 +12,60 @@
 </head>
 
 <body>
-    <header id="header" class="blue">
-        <h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis ullam adipisci doloremque corrupti,
-            dolores, nulla deserunt quis, officia ad velit vel quae animi soluta dolore! Sapiente magni molestias totam
-            cumque?
-        </h3>
-    </header>
-    <h1>
-        <%= message %>
-    </h1>
-    <h2>Hello Ejs and Express</h2>
+    <section class="Header">
+        <div class="container">
+            <div class="Header__title">
+                <p class="Header__title-shadow">
+                    Контакты
+                </p>
+                <p class="Header__title-text">
+                    Контакты
+                </p>
+            </div>
+            <div class="Header__subtitleBox">
+                <p class="Header__subtitle">
+                    Давайте обсудим и решим вашу задачу.
+                </p>
+                <p class="Header__subtitle">
+                    Также отправить письмо в свободной форме на почту.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <script src="main.js"></script>
+    <section class="content">
+        <div class="container">
+            <div class="business_card">
+
+            </div>
+            <div class="bg_box">
+
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <p>
+            Также отправляйте письмо в свободной форме на почту → post@mail.com
+        </p>
+    </div>
+    <footer>
+        <div class="container">
+            <p class="autor">
+                Viktor 2020.
+            </p>
+            <div class="socialNetworks">
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+            </div>
+            <p class="companyDeveloper">
+                Handcrafted by
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script src="/public/main.js"></script>
 
 </body>
 

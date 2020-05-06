@@ -9,7 +9,7 @@ const app = express();
 const port = 3001;
 const IndexRouter = require('./routes/index');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.use('/', IndexRouter)
@@ -24,7 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //render html file
-app.engine('html', require('ejs').renderFile)
+// app.engine('html', require('ejs').renderFile)
 // app.get('/', (req, res) => {
 //     res.render('index.html', { message: 'Hello Express!' })
 // })

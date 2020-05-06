@@ -1,0 +1,52 @@
+@import "./mixins";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+  -webkit-text-size-adjust: none;
+  cursor: url("/public/img/cursor_static.cur"), auto;
+
+  &:active {
+    cursor: url("/public/img/cursor_active.cur"), auto;
+  }
+}
+
+a:hover {
+  cursor: url("/public/img/cursor_active.cur"), auto;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-black);
+  background-color: var(--color-primary-dark);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 120em;
+  width: 100%;
+  margin: 0 auto;
+}
+

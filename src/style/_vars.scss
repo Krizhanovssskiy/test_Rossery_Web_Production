@@ -1,0 +1,36 @@
+:root {
+  --gutter: 3rem;
+  --color-primary: #1f1f1f; // wt
+  --color-secondary: #ffffff; // wt
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-black-1: #2b2b2b;
+  --color-grey-light: #f6f5f6;
+  --color-grey: #f2f2f2;
+  --color-grey-0: #1b1b1b;
+
+  --color-grey-dark: #c5c5c5; // wt
+  --color-grey-dark-0: #7e7a7f; //+
+
+  --text-size-11: 11px;
+  --text-size-12: 12px;
+  --text-size-13: 13px;
+  --text-size-14: 14px;
+  --text-size-15: 15px;
+  --text-size-16: 16px;
+  --text-size-17: 17px;
+  --text-size-18: 18px;
+  --text-size-19: 19px;
+  --text-size-20: 20px;
+  --text-size-21: 21px;
+  --text-size-22: 22px;
+  --text-size-24: 24px;
+  --text-size-26: 26px;
+  --text-size-42: 42px;
+  --text-size-48: 48px;
+  --text-size-64: 64px;
+
+  --font-primary: "TRY-Vesterbro", sans-serif;
+  //--font-primary-semibold: "SFProText", sans-serif;
+  --font-secondary: "SFProText", sans-serif;
+}

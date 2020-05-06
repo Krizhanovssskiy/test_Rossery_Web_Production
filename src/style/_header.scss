@@ -1,0 +1,52 @@
+@import "./mixins";
+.Header {
+    .container {
+        @include centering-children;
+        flex-direction: column;
+    }
+
+    &__title {
+        position: relative;
+        @include centering-children;
+        max-width: 350px;
+        width: 100%;
+        height: 80px;
+
+        &-shadow &-text {
+            font-family: var(--font-primary);
+            font-style: normal;
+            font-weight: bold;
+        }
+        &-shadow {
+            position: absolute;
+            font-size: var(--text-size-64);
+            line-height: 129.6%;
+            letter-spacing: 0.02em;
+            color: rgba(43, 43, 43, 0.05);
+            border: 1px solid rgba(224, 224, 224, 0.1);
+            filter: blur(2px);
+        }
+        &-text {
+            font-size: var(--text-size-42);
+            line-height: 129.6%;
+            letter-spacing: 0.02em;
+            color: var(--color-black-1);
+        }
+    }
+    &__subtitleBox {
+        @include centering-children;
+        flex-direction: column;
+    }
+    &__subtitle {
+        max-width: 680px;
+        font-family: var(--font-primary);
+        font-style: normal;
+        font-weight: normal;
+        font-size: var(--text-size-24);
+        line-height: 129.6%;
+        /* or 31px */
+        letter-spacing: 0.02em;
+
+        color: var(--color-black-1);
+    }
+}
