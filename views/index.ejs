@@ -39,14 +39,17 @@
                 <div class="Content__formBusinessCardBox">
 
                     <%- include('partials/businessCard'); -%>
-                    <form>
-                        <label for="">
-                            <input type="text">
-                        </label>
-                        <button>
+                    <div class="EnterRoute">
+                        <div class="InputBox">
+                            <div class="InputBox__label">
+                                Откуда*
+                            </div>
+                            <input type="text" name="address" class="InputBox__input">
+                        </div>
+                        <button class="Btn__standard">
                             Рассчитать маршрут
                         </button>
-                    </form>
+                    </div>
                 </div>
                 <div class="Content__bgBox">
                 </div>
