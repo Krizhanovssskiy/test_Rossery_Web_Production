@@ -1,0 +1,48 @@
+@import 'mixins';
+.Footer {
+  .container {
+    padding: 65px 0;
+    border-top: 1px solid var(--color-footer-border);
+    @include centering-children;
+    justify-content: space-between;
+  }
+
+  &__autor {
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--text-size-12);
+    line-height: 129.6%;
+    letter-spacing: 0.02em;
+    color: var(--color-black-1);
+  }
+
+  &__socialNetworks {
+    @include centering-children;
+    a {
+      @include centering-children;
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--color-transparent);
+      border-radius: 50%;
+      font-size: var(--text-size-22);
+      color: var(--color-primary);
+      transition: .5s;
+      &:first-child {
+        margin-right: 10px;
+      }
+      &:hover {
+        border: 1px solid var(--color-footer-border);
+      }
+    }
+  }
+  &__companyDeveloper {
+    font-family: var(--font-third);
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--text-size-12);
+    line-height: 126.6%;
+    letter-spacing: 0.02em;
+    color: var(--color-primary);
+  }
+}

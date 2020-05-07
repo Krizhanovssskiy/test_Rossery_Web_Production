@@ -1,3 +1,10 @@
+@mixin cursor-static {
+  cursor: url("/public/img/cursor_static.cur"), auto;
+}
+@mixin cursor-active {
+  cursor: url("/public/img/cursor_active.cur"), auto;
+}
+
 @mixin centering-children {
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 :root {
-  --gutter: 3rem;
-  --color-primary: #1f1f1f; // wt
+  --color-transparent: transparent;
+  --color-primary: #54617E; // wt
   --color-secondary: #ffffff; // wt
   --color-white: #ffffff;
   --color-black: #000000;
@@ -11,6 +11,8 @@
 
   --color-grey-dark: #c5c5c5; // wt
   --color-grey-dark-0: #7e7a7f; //+
+
+  --color-footer-border: rgba(84, 97, 126, 0.2);
 
   --text-size-11: 11px;
   --text-size-12: 12px;
@@ -26,11 +28,13 @@
   --text-size-22: 22px;
   --text-size-24: 24px;
   --text-size-26: 26px;
+  --text-size-28: 28px;
   --text-size-42: 42px;
   --text-size-48: 48px;
   --text-size-64: 64px;
 
   --font-primary: "TRY-Vesterbro", sans-serif;
-  //--font-primary-semibold: "SFProText", sans-serif;
   --font-secondary: "SFProText", sans-serif;
+  --font-third: "Avenir", sans-serif;
+
 }
