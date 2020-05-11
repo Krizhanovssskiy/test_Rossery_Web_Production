@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/main.css">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
     <script src="https://kit.fontawesome.com/379b7a8952.js" crossorigin="anonymous"></script>
     <title>
         <%= title %>
@@ -36,25 +40,16 @@
 
         <section class="Content">
             <div class="Content__cardsBox">
+                <div class="Content__bgBox">
+                </div>
                 <div class="Content__formBusinessCardBox">
 
                     <%- include('partials/businessCard'); -%>
-                    <div class="EnterRoute">
-                        <div class="InputBox">
-                            <div class="InputBox__label">
-                                Откуда*
-                            </div>
-                            <input type="text" name="address" class="InputBox__input">
-                        </div>
-                        <button class="Btn__standard">
-                            Рассчитать маршрут
-                        </button>
-                    </div>
-                </div>
-                <div class="Content__bgBox">
+                    <%- include('partials/enterRoute'); -%>
+
                 </div>
             </div>
-            <div class="Content__textBox">
+            <div class="Content__textBox" style="display: none">
                 <div class="container">
                     <p class="Content__text">
                         Также отправляйте письмо в свободной форме на почту
@@ -68,12 +63,18 @@
                     </p>
                 </div>
             </div>
+
+            <div id='map' style='width: 400px; height: 300px;'></div>
+
         </section>
 
         <%- include('partials/footer'); -%>
+
     </div>
 
-
+    <div id="Modal" class="Modal">
+        <%- include('partials/form'); -%>
+    </div>
     <script src="/public/main.js"></script>
 
 </body>

@@ -1,6 +1,6 @@
 @import "./mixins";
 .Header {
-    margin: 90px 0;
+    margin-bottom: 90px;
     .container {
         @include centering-children;
         flex-direction: column;

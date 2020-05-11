@@ -1,0 +1,54 @@
+
+<div class="FormBox">
+    <span id="ClosePopup" class="Btn__close"></span>
+    <h4 class="FormBox__title">
+        Давайте обсудим ваш вопрос
+    </h4>
+    <p class="FormBox__subtitle">
+        Оставьте свои контактные данные и я свяжусь с вами.
+    </p>
+    <form id="form">
+        <div class="InputBox">
+            <div class="InputBox__label">
+                Им’я *
+            </div>
+            <input
+                id="inputUserName"
+                type="text"
+                name="name"
+                class="InputBox__input"
+                placeholder="Как я могу к вам обращаться?"
+                value=""
+            >
+        </div>
+        <div class="InputBox">
+            <div class="InputBox__label">
+                Номер телефона*
+            </div>
+            <input
+                id="inputUserPhone"
+                type="tel"
+                name="telephone"
+                class="InputBox__input"
+                placeholder="+380"
+            >
+        </div>
+        <div class="InputBox">
+            <div class="InputBox__label">
+                Какой вопрос
+            </div>
+            <textarea
+                id="textarea"
+                class="InputBox__input"
+                placeholder="Опишите проблему в сводобной форме"
+            ></textarea>
+        </div>
+        <button
+            id="submit"
+            class="Btn__disabled"
+            disabled
+        >
+            Заполните нужные поля
+        </button>
+    </form>
+</div>

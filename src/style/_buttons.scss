@@ -1,0 +1,50 @@
+.Btn {
+  &__active,
+  &__disabled {
+    padding: 12px 30px;
+    margin: 10px 0;
+    font-family: var(--font-secondary);
+    font-size: var(--text-size-14);
+    line-height: 116.6%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    border: none;
+  }
+
+  &__active{
+    color: var(--color-white-2);
+    background: var(--color-primary);
+    @include cursor-active;
+  }
+
+  &__disabled {
+    outline: none;
+    background: var(--color-background-dicabled);
+    color: var(--color-primary);
+    @include cursor-static;
+  }
+
+  &__close {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    @include cursor-active;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 32px;
+      height: 1px;
+      background: var(--color-primary);
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
