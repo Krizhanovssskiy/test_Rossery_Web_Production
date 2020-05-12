@@ -1,23 +1,30 @@
 const contactSite = () => {
-    const doc = document;
-    const openPopup = doc.getElementById('OpenPopup');
-    const modal = doc.getElementById('Modal');
-    const closePopup = doc.getElementById('ClosePopup');
-    const form = doc.getElementById('form');
-    const inputUserName = doc.getElementById('inputUserName');
-    const inputUserPhone = doc.getElementById('inputUserPhone');
-    const textarea = doc.getElementById('textarea');
-    const submit = doc.getElementById('submit');
+    const openPopup = document.getElementById('OpenPopup');
+    const modal = document.getElementById('Modal');
+    const closePopup = document.getElementById('ClosePopup');
+    const form = document.getElementById('form');
+    const inputUserName = document.getElementById('inputUserName');
+    const inputUserPhone = document.getElementById('inputUserPhone');
+    const textarea = document.getElementById('textarea');
+    const submit = document.getElementById('submit');
+    const donePopup = document.getElementById('donePopup');
+    const formBox = document.getElementById('formBox');
     let nameValid = null;
     let validTel = null
 
     const onTogglePopup = () => {
-        modal.classList.toggle('Modal__open')
+        formBox.classList.toggle('FormBox__close')
+        donePopup.classList.toggle('DonePopup__open')
         inputUserName.value = '';
         inputUserPhone.value = '';
         textarea.value = '';
         submit.classList.remove('Btn__active')
         submit.classList.add('Btn__disabled')
+    }
+
+    const onOpenPopup = () => {
+        modal.classList.toggle('Modal__open')
+
     }
 
     function setCursorPosition(pos, elem) {
@@ -84,8 +91,8 @@ const contactSite = () => {
         }
     }
 
-    openPopup.addEventListener('click', onTogglePopup);
-    closePopup.addEventListener('click', onTogglePopup);
+    openPopup.addEventListener('click', onOpenPopup);
+    closePopup.addEventListener('click', onOpenPopup);
 
     inputUserName.addEventListener('focus', validName, false);
     inputUserName.addEventListener('input', validName, false);

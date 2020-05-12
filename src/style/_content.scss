@@ -4,12 +4,15 @@
   height: 100%;
   @include centering-children;
   flex-direction: column;
+  flex-grow: 3;
   &__cardsBox {
     position: relative;
     max-width: 870px;
     width: 100%;
     min-height: 510px;
     max-height: 100vh;
+    flex-grow: 3;
+    transition: .5s;
   }
   &__bgBox {
     position: absolute;
@@ -20,6 +23,8 @@
     background: linear-gradient(180deg, #54617E 0%, #54617E 100%);
     box-shadow: 0 24px 84px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
+    opacity: 1;
+    transition: .5s;
     &:before {
       content: '';
       position: absolute;
@@ -41,6 +46,7 @@
     background: var(--color-white);
     box-shadow: 0 24px 84px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
+    transition: .5s;
   }
   &__businessCard {
     display: grid;
@@ -84,6 +90,8 @@
 
   &__textBox {
     margin: 100px 0;
+    opacity: 1;
+    transition: .5s;
   }
 
   &__text {

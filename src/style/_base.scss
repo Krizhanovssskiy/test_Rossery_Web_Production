@@ -42,23 +42,10 @@ ul {
 }
 
 .container {
+  position: relative;
   max-width: 120em;
   width: 100%;
   margin: 0 auto;
-}
-.Contacts {
-  @include centering-children;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 90px;
-
-  &__popup {
-    position: relative;
-    background: var(--color-background-popup);
-    z-index: 2;
-  }
 }
 
 .btnOpen {

@@ -1,0 +1,47 @@
+.Contacts {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 90px;
+
+  &__show-map {
+    .Content__textBox,
+    .Footer,
+    .Content__bgBox {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      z-index: -1;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .Content__cardsBox {
+      max-width: 100%;
+    }
+    .Content__formBusinessCardBox {
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .EnterRoute {
+      height: 100%;
+      margin-top: 30px;
+      opacity: 1;
+    }
+    #map {
+      width: 65%;
+      height: 100%;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  &__hide-map {
+
+  }
+
+
+}
