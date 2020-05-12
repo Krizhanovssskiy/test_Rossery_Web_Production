@@ -3,7 +3,6 @@ const openMap = () => {
     const contactsBox = document.querySelector('.Contacts')
     const canvas = document.querySelector('.mapboxgl-canvas')
     const onMapOpen = (e) => {
-        console.log(contactsBox)
        if (btnOpenMap.classList.contains('btnOpen')) {
            btnOpenMap.classList.remove('btnOpen');
            btnOpenMap.classList.add('btnClose');

@@ -119,6 +119,8 @@
 }
 
 .DonePopup {
+  @include centering-children;
+  flex-direction: column;
   position: relative;
   padding: 130px 145px;
   background: var(--color-white);
@@ -132,6 +134,12 @@
   div {
     width: 7.813rem;
     height: 7.813rem;
+    font-size: 80px;
+    color: var(--color-primary);
+    margin-bottom: 50px;
+    i {
+      position: absolute;
+    }
   }
   p {
     font-family: var(--font-primary);

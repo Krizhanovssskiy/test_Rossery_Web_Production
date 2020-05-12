@@ -1,7 +1,7 @@
 const contactSite = () => {
     const openPopup = document.getElementById('OpenPopup');
     const modal = document.getElementById('Modal');
-    const closePopup = document.getElementById('ClosePopup');
+    const [...closePopupAll] = document.querySelectorAll('.Btn__close');
     const form = document.getElementById('form');
     const inputUserName = document.getElementById('inputUserName');
     const inputUserPhone = document.getElementById('inputUserPhone');
@@ -13,18 +13,38 @@ const contactSite = () => {
     let validTel = null
 
     const onTogglePopup = () => {
-        formBox.classList.toggle('FormBox__close')
-        donePopup.classList.toggle('DonePopup__open')
+        // formBox.classList.toggle('FormBox__close')
+        submit.classList.remove('Btn__active')
+        submit.classList.add('Btn__disabled')
+        if (nameValid && validTel) {
+            console.log('rerere')
+            donePopup.classList.add('DonePopup__open');
+            formBox.classList.add('FormBox__close');
+        } else {
+            console.log('aaaaddd')
+            donePopup.classList.remove('DonePopup__open');
+            formBox.classList.remove('FormBox__close');
+        }
         inputUserName.value = '';
         inputUserPhone.value = '';
         textarea.value = '';
-        submit.classList.remove('Btn__active')
-        submit.classList.add('Btn__disabled')
+        nameValid = null;
+        validTel = null;
     }
 
     const onOpenPopup = () => {
-        modal.classList.toggle('Modal__open')
-
+        modal.classList.toggle('Modal__open');
+        onTogglePopup();
+    }
+    const closePopup = () => {
+        modal.classList.remove('Modal__open');
+    }
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(inputUserName.value)
+        console.log(inputUserPhone.value)
+        console.log(textarea.value)
+        onTogglePopup();
     }
 
     function setCursorPosition(pos, elem) {
@@ -40,7 +60,6 @@ const contactSite = () => {
             range.select()
         }
     }
-
     function mask(event) {
         var matrix = "+ 38(0__) ___-__-__",
             i = 0,
@@ -66,7 +85,6 @@ const contactSite = () => {
             onActiveBtnSubmit(nameValid, validTel);
         }
     };
-
     const validName = () => {
         if (inputUserName.value.length >= 3 && inputUserName.value.length <= 24) {
             inputUserName.classList.remove('InputBox__invalid')
@@ -78,7 +96,6 @@ const contactSite = () => {
             onActiveBtnSubmit(nameValid, validTel)
         }
     }
-
     const onActiveBtnSubmit = (name, tel) => {
         if (name && tel) {
             submit.removeAttribute('disabled')
@@ -92,7 +109,8 @@ const contactSite = () => {
     }
 
     openPopup.addEventListener('click', onOpenPopup);
-    closePopup.addEventListener('click', onOpenPopup);
+
+    closePopupAll.map(item => item.addEventListener('click', onOpenPopup, false))
 
     inputUserName.addEventListener('focus', validName, false);
     inputUserName.addEventListener('input', validName, false);
@@ -101,13 +119,7 @@ const contactSite = () => {
     inputUserPhone.addEventListener("focus", mask, false);
     inputUserPhone.addEventListener("blur", mask, false);
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        console.log(inputUserName.value)
-        console.log(inputUserPhone.value)
-        console.log(textarea.value)
-        onTogglePopup();
-    })
+    form.addEventListener('submit', onSubmit, false)
 }
 
 module.exports = contactSite;
