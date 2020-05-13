@@ -1,6 +1,9 @@
 @import "./mixins";
 .Header {
     margin-bottom: 90px;
+    @include respond(mobile-m) {
+        margin-bottom: 25px;
+    }
     .container {
         @include centering-children;
         flex-direction: column;
@@ -27,6 +30,9 @@
             color: rgba(43, 43, 43, 0.05);
             border: 1px solid rgba(224, 224, 224, 0.1);
             filter: blur(2px);
+            @include respond(mobile-m) {
+                font-size: var(--text-size-56);
+            }
         }
         &-text {
             font-size: var(--text-size-42);
@@ -51,5 +57,9 @@
         text-align: center;
 
         color: var(--color-black-1);
+
+        @include respond(mobile-m) {
+            font-size: var(--text-size-12);
+        }
     }
 }

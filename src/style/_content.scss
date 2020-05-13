@@ -6,7 +6,12 @@
   @include centering-children;
   flex-direction: column;
   flex-grow: 3;
+  @include respond(phone) {
+    flex-grow: 0;
+  }
   &__cardsBox {
+    display: flex;
+    flex-direction: column;
     position: relative;
     max-width: 870px;
     width: 100%;
@@ -14,6 +19,17 @@
     max-height: 100vh;
     flex-grow: 3;
     transition: .5s;
+
+    .container {
+      flex-grow: 3;
+    }
+    @include respond(mobile-l) {
+      flex-grow: 0;
+      min-height: 290px;
+    }
+    @include respond(mobile-m) {
+
+    }
   }
   &__bgBox {
     position: absolute;
@@ -26,6 +42,16 @@
     border-radius: 2px;
     opacity: 1;
     transition: .5s;
+    @include respond(phone) {
+      top: 15%;
+      left: 20%;
+      bottom: 30%;
+    }
+    @include respond(mobile-l) {
+      display: none;
+      opacity: 0;
+      z-index: -1;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -41,14 +67,22 @@
     top: 165px;
     bottom: 0;
     left: 0;
-    width: 530px;
+    max-width: 530px;
     height: fit-content;
     padding: 70px 60px;
     background: var(--color-white);
     box-shadow: 0 24px 84px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     transition: .5s;
-  }
+    @include respond(mobile-l) {
+      @include centering-abs;
+    }
+    @include respond(mobile-l) {
+      max-width: 319px;
+      @include centering-abs;
+      padding: 33px;
+    }
+    }
   &__businessCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -56,12 +90,24 @@
     grid-row-gap: 50px;
     font-family: var(--font-primary);
     color: var(--color-black-1);
-
+    @include respond(mobile-l) {
+      display: block;
+    }
+    &-name {
+      @include respond(mobile-l) {
+        display: flex;
+      }
+    }
     h3 {
+      margin: 0;
+      padding: 0;
       font-style: normal;
       font-weight: bold;
       font-size: var(--text-size-28);
       line-height: 126.6%;
+      @include respond(mobile-l) {
+        font-size: var(--text-size-24);
+      }
     }
     &-text {
       margin-top: 15px;
@@ -69,9 +115,16 @@
       font-weight: 300;
       font-size: 20px;
       line-height: 106%;
+      @include respond(mobile-l) {
+        font-size: var(--text-size-16);
+        margin-top: 0;
+      }
     }
     &-contact {
       align-self: end;
+      @include respond(mobile-l) {
+        margin-top: 22px;
+      }
     }
     &-buttons {
       display: inline-block;
@@ -90,12 +143,18 @@
 
 
   &__textBox {
+    width: 100%;
     margin: 100px 0;
     opacity: 1;
     transition: .5s;
+    text-align: center;
+    @include respond(mobile-l) {
+      margin: 35px 0 50px;
+    }
   }
 
   &__text {
+    display: inline-block;
     text-align: center;
     font-family: var(--font-primary);
     font-style: normal;
@@ -105,12 +164,20 @@
     letter-spacing: 0.02em;
 
     color: var(--color-black-1);
+    @include respond(mobile-m) {
+      font-size: var(--text-size-12);
+      margin-bottom: 22px;
+    }
   }
 
   &__emailBox {
     display: inline-flex;
+    justify-content: center;
     color: var(--color-primary);
     @include cursor-active;
+    @include respond(mobile-m) {
+      font-size: var(--text-size-20);
+    }
     &-arrowStatic {
       transition: .5s;
       opacity: 1;

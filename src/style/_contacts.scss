@@ -1,3 +1,4 @@
+@import "mixins";
 .Contacts {
   display: flex;
   flex-direction: column;
@@ -20,11 +21,22 @@
     }
     .Content__cardsBox {
       max-width: 100%;
+      @include respond(mobile-l) {
+        min-height: 445px;
+      }
     }
     .Content__formBusinessCardBox {
       top: 0;
       left: 0;
       z-index: 1;
+      @include respond(phone) {
+        @include centering-abs;
+      }
+    }
+    .Content__businessCard {
+      @include respond(phone) {
+        display: block;
+      }
     }
     .EnterRoute {
       height: 100%;
@@ -32,17 +44,16 @@
       opacity: 1;
     }
     #map {
-      width: 65%;
-      height: 100%;
       opacity: 1;
       z-index: 1;
-      //display: block;
     }
+    .mapLink {
+      @include respond(phone) {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
   }
-
-  &__hide-map {
-
-  }
-
 
 }

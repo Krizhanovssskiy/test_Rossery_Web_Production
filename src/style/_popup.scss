@@ -15,29 +15,43 @@
     opacity: 1;
     z-index: 2;
   }
-
+  .Btn__close {
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    @include respond(mobile-l) {
+      top: 35px;
+      right: 35px;
+    }
+  }
   .InputBox {
     margin-bottom: 18px;
   }
 }
 
 .FormBox {
+  @include centering-children;
+  align-items: stretch;
+  flex-direction: column;
   position: absolute;
   padding: 130px 145px;
   background: var(--color-white);
   opacity: 1;
   z-index: 1;
   transition: .5s;
+  @include respond(mobile-l) {
+    padding: 65px 70px;
+  }
+  @include respond(mobile-m) {
+    height: 100vh;
+    padding: 33px;
+  }
   &__close {
     opacity: 0;
     z-index: -1;
   }
 
-  .Btn__close {
-    position: absolute;
-    top: 70px;
-    right: 80px;
-  }
+
   &__title {
     font-family: var(--font-primary);
     font-style: normal;
@@ -127,6 +141,14 @@
   opacity: 0;
   z-index: -1;
   transition: .5s;
+  @include respond(mobile-l) {
+    padding: 65px 70px;
+  }
+  @include respond(mobile-m) {
+    height: 100vh;
+    padding: 33px;
+  }
+
   &__open {
     opacity: 1;
     z-index: 1;
@@ -150,5 +172,8 @@
     text-align: center;
 
     color: var(--color-black);
+    @include respond(mobile-l) {
+      font-size: var(--text-size-24);
+    }
   }
 }

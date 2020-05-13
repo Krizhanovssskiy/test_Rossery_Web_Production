@@ -43,9 +43,20 @@ ul {
 
 .container {
   position: relative;
-  max-width: 120em;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+
+  @include respond(tab-land) {
+    max-width: 1140px;
+    padding: 0 15px;
+  }
+  @include respond(tab-port) {
+    max-width: 960px;
+  }
+  @include respond(phone) {
+    max-width: 720px;
+  }
 }
 
 .btnOpen {
