@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/main.css">
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />-->
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/379b7a8952.js" crossorigin="anonymous"></script>
     <title>
@@ -16,6 +19,15 @@
 </head>
 
 <body>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
+            type="text/css"
+    />
+
+
     <div class="Contacts">
         <section class="Header">
             <div class="container">
@@ -39,11 +51,10 @@
         </section>
 
         <section class="Content">
+            <div id='map' class=""></div>
             <div class="Content__cardsBox">
                 <div class="Content__bgBox">
                 </div>
-                <div class="Map"></div>
-                <div id='map' class=""></div>
                 <div class="container">
                     <div class="Content__formBusinessCardBox">
 

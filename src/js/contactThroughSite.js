@@ -13,7 +13,6 @@ const contactSite = () => {
     let validTel = null
 
     const onTogglePopup = () => {
-        // formBox.classList.toggle('FormBox__close')
         submit.classList.remove('Btn__active')
         submit.classList.add('Btn__disabled')
         if (nameValid && validTel) {

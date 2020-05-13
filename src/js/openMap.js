@@ -1,24 +1,21 @@
 const openMap = () => {
     const btnOpenMap = document.getElementById('OpenMap');
-    const contactsBox = document.querySelector('.Contacts')
-    const canvas = document.querySelector('.mapboxgl-canvas')
-    const onMapOpen = (e) => {
+    const contactsBox = document.querySelector('.Contacts');
+    const inputAddress = document.getElementById('inputAddress')
+    const onMapOpen = () => {
        if (btnOpenMap.classList.contains('btnOpen')) {
            btnOpenMap.classList.remove('btnOpen');
            btnOpenMap.classList.add('btnClose');
            contactsBox.classList.add('Contacts__show-map')
-           canvas.style = 'width: 100%;';
-           canvas.style = 'height: 100%;';
-           canvas.style = 'box-shadow: inset 50px 30px 50px 15px white;'
-
+           inputAddress.value = ''
        } else if (btnOpenMap.classList.contains('btnClose')) {
            btnOpenMap.classList.remove('btnClose');
            btnOpenMap.classList.add('btnOpen');
            contactsBox.classList.remove('Contacts__show-map')
+           inputAddress.value = ''
        }
 
     }
-    console.log(btnOpenMap, 'btm')
     btnOpenMap.addEventListener('click', onMapOpen, false)
 }
 

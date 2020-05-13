@@ -1,17 +1,42 @@
 const mapBox = () => {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jpemhhbm92c3Nza2l5IiwiYSI6ImNrYTJkMnJwMDAwYm8zbWw5OHR3Y21hemIifQ.YlxkPzI9TNfzH0a-uCb-dg';
+    const inputAddress = document.getElementById('inputAddress');
+    const Btn = document.getElementById('Btm-active-address');
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jpemhhbm92c3Nza2l5IiwiYSI6ImNrYTJkMDYxMzA5MnozbG9nd3JtdWJjNXoifQ.jx17DzqDoY7fufqJMVZ9Uw';
+
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/krizhanovssskiy/cka3uluc80m0f1innoee0guj8',
-        center: [32.0565625, 49.426618999999995],
-        zoom: 11
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [32.0621, 49.4285],
+        zoom: 13,
+        trackResize: true
+    });
+    const directionPath = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        unit: 'metric',
+        profile: 'mapbox/driving',
+        controls: {
+            inputs: false,
+            instructions: true,
+            profileSwitcher: true
+        }
+    })
+    map.addControl(
+        directionPath,
+        'bottom-right'
+    );
+
+    map.on('load', function() {
+        directionPath.setOrigin([ 32.06446,49.44091 ])
+        map.setLayoutProperty('country-label', 'text-field', [
+            'get',
+            'name_ru'
+        ]);
     });
 
-    const nav = new mapboxgl.NavigationControl({
-        showCompass: true,
-        showZoom: true,
+    Btn.addEventListener('click', () => {
+        directionPath.setDestination(inputAddress.value);
+
     })
 
-    map.addControl(nav, 'bottom-right')
 }
 module.exports = mapBox;
