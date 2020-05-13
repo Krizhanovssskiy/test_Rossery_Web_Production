@@ -16,11 +16,9 @@ const contactSite = () => {
         submit.classList.remove('Btn__active')
         submit.classList.add('Btn__disabled')
         if (nameValid && validTel) {
-            console.log('rerere')
             donePopup.classList.add('DonePopup__open');
             formBox.classList.add('FormBox__close');
         } else {
-            console.log('aaaaddd')
             donePopup.classList.remove('DonePopup__open');
             formBox.classList.remove('FormBox__close');
         }
